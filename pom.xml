@@ -11,6 +11,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <properties>
+        <itext.version>7.1.14</itext.version>
+    </properties>
+
     <groupId>com.toptime</groupId>
     <artifactId>test</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -26,6 +30,15 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--添加所有模块 https://kb.itextpdf.com/home/it7kb/installation-guidelines/installing-itext-7-for-java-->
+        <!-- add all iText 7 modules -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itext7-core</artifactId>
+            <version>${itext.version}</version>
+            <type>pom</type>
+        </dependency>
+
     </dependencies>
 
     <build>
