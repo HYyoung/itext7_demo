@@ -38,6 +38,12 @@
             <version>${itext.version}</version>
             <type>pom</type>
         </dependency>
+        <!--itext7 html转pdf用到的包-->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>html2pdf</artifactId>
+            <version>3.0.0</version>
+        </dependency>
 
     </dependencies>
 
