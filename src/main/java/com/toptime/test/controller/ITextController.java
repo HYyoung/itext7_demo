@@ -118,7 +118,7 @@ public class ITextController {
     }
 
     @RequestMapping("/table")
-    public void createPdfTable(HttpServletResponse response){
+    public void createPdfTable(HttpServletResponse response,String qt){
 
         PdfWriter writer = null;
         try {
@@ -192,6 +192,9 @@ public class ITextController {
             ////////////添加html片段 end///////////
             document.add(new Paragraph("--------------").setFont(font));
             document.add(new Paragraph("这是中文!").setFont(font));
+            if (qt!=null){
+                document.add(new Paragraph(qt).setFont(font));
+            }
             document.close();
         } catch (IOException e) {
             e.printStackTrace();
