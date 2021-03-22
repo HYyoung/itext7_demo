@@ -3,6 +3,7 @@ package com.toptime.test.config;
 
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.colors.DeviceCmyk;
 import com.itextpdf.kernel.colors.DeviceRgb;
 import com.itextpdf.kernel.events.Event;
@@ -53,7 +54,15 @@ public class MyEventHandler implements IEventHandler {
         pdfCanvas.beginText()
                 .setFontAndSize(font, 9)
                 .moveText(pageSize.getWidth() - 120, pageSize.getTop() - 20)//上方居右
-                .showText("THE TRUTH IS OUT THERE")
+                .showText("THE TRUTH IS OUT THERE11")
+
+                //划线 As you can see, I add two green lines using moveTo(), lineTo() and stroke().
+                .setStrokeColor(ColorConstants.GREEN).
+                setLineWidth(1).
+                moveTo(30, pageSize.getTop()-25).
+                lineTo(pageSize.getWidth()-30, pageSize.getTop()-25).
+                stroke()
+                //////////////////
                 .moveText(120-pageSize.getWidth()/2, -pageSize.getTop() + 30)//下方居中
                 .showText(String.valueOf(pageNumber))
                 .endText();
